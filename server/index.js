@@ -7,3 +7,9 @@ conn.sync().then(() => {
 		console.log(`%Server listening at ${port}`);
 	});
 });
+
+/* conn.sync({ force: false }).then(() => {
+	server.listen(3001, () => {
+	  console.log(`%Server listening at ${port}`);
+	});
+  }); */
