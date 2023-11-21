@@ -2,11 +2,17 @@ const { DataTypes } = require('sequelize');
 //Modelo de quien recibe el envío
 module.exports = (sequelize) => { 
     sequelize.define('Receive', {
+        ID: {
+         type: DataTypes.INTEGER,
+         primaryKey: true,
+         allowNull: false,
+         autoIncrement: true
+    },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-        destination: {
+        address: {
             type: DataTypes.STRING,
             allowNull: false,
         },

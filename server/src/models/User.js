@@ -33,6 +33,10 @@ module.exports = (sequelize) => {
           allowNull: false,
           unique: true,
         },
+        connect: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false,
+        }
       }, { freezeTableName: true
     });
 }
