@@ -28,10 +28,9 @@ function NavBar() {
                 Capaz algo más
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/about">Cotizador</Nav.Link>
+            <Nav.Link href="/cotizacion">Cotizador</Nav.Link>
             <Nav.Link href="/about">Sobre nosotros</Nav.Link>
-            <Nav.Link href="/about">Contacto</Nav.Link>
-            <Nav.Link href="/login">Ingresar</Nav.Link>
+            <Nav.Link href="/contacto">Contacto</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
