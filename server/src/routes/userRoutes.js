@@ -4,8 +4,7 @@ const users = Router()
 
 // Autenticación y Registro de Usuarios
 users.post('/register', /* handler */); //body
-users.post('/login',/* handler */); //body
-users.post('/logout',/* handler */); //body
+users.put('/log',/* handler */); //body
 
 // Gestión de Usuarios
 users.get('/profile',/* handler */); // query
