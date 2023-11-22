@@ -9,6 +9,8 @@ David Henao
 
 
 
+
+
 Tabla de Ubicaciones Comerciales
 Zona norte
 Zona Sur
@@ -41,3 +43,4 @@ packeteria tamaño pequeño (1 - 25)  15
 peso 0.75usd x kg pesado (+25)  25 
                   mediao (10 - 25)  20
                   liviano (0- 10) 15
+
