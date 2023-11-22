@@ -6,7 +6,11 @@ const fs = require("fs");
 
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
+
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/bfs`,
+
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/BFS`,
+
 	
 	{
 		logging: false,
@@ -15,6 +19,21 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}
 	}
 );
 
+
+const {User, Shipment, Receive, Package, Branch} = sequelize.models;
+
+Shipment.hasMany(Receive, {foreignKey: "shipmentId"});
+Receive.belongsTo(Shipment, {foreignKey: "receiveId"});
+
+User.hasMany(Shipment);
+Shipment.belongsTo(User);
+
+Shipment.hasMany(Package);
+Package.belongsTo(Shipment);
+
+Branch.hasMany(Shipment);
+Shipment.belongsTo(Branch);
+=======
 const basename = path.basename(__filename);
 
 // Lectura y carga dinámica de modelos desde la carpeta 'models'
@@ -56,12 +75,20 @@ Package.belongsTo(Shipment, {foreignKey: "packageId"});
 Branch.hasMany(Shipment, {foreignKey: "branchId"});
 Shipment.belongsTo(Branch, {foreignKey: "shipmentId"});
 
+
 User.belongsToMany(Branch, { through: 'User_Branch' });
 Branch.belongsToMany(User, { through: 'User_Branch' });
 
 
 
+
+module.exports = {	
+	...sequelize.models,
+  	conn: sequelize,
+};
+
 module.exports = {
 	...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
 	conn: sequelize, // para importart la conexión { pool } = require('./db.js');
   };
+

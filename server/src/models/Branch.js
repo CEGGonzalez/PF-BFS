@@ -21,6 +21,17 @@ module.exports = (sequelize) => {
           },
           coordinates: {
             type: DataTypes.JSON, // Coordenadas geográficas (latitud y longitud).
+
+          },
+          mapUrl: {
+            type: DataTypes.STRING, // URL del mapa o datos para integrar un mapa.
+          },
+          contactPerson: {
+            type: DataTypes.STRING,
+          },
+          contactEmail: {
+            type: DataTypes.STRING,
+
             allowNull: false,
           },
           mapUrl: {
@@ -34,13 +45,16 @@ module.exports = (sequelize) => {
           contactEmail: {
             type: DataTypes.STRING,
             allowNull: false,
+
             validate: {
               isEmail: true,
             },
           },
           contactPhone: {
             type: DataTypes.STRING,
+
             allowNull: false,
+
           },
           services: {
             type: DataTypes.ARRAY(DataTypes.STRING), // Servicios ofrecidos en esta ubicación (ej. almacenamiento, envío, etc.).

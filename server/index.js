@@ -1,12 +1,13 @@
 const server = require("./src/server.js");
 const { conn } = require("./src/db.js");
-const port = process.env.PORT || 3001;
+const PORT = process.env.DB_PORT || 3001;
 
-conn
-.sync({ force: false })
-.then(() => {
-	server.listen(3001, () => {
-		console.log(`server conectado a base de datos, puerto ojete ${port}`);
+
+conn.sync({ force: true }).then(() => {
+	server.listen(PORT, () => {
+	  console.log(`%Server listening at ${PORT}`);
 	});
-})
+
+
 .catch((error) => console.error(error));
+

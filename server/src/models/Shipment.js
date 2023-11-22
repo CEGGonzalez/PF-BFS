@@ -1,8 +1,13 @@
 const { DataTypes } = require('sequelize');
  //Modelo de quien envia el paquete
 module.exports = (sequelize) => {
+
+    sequelize.define('Receive', {
+        ID: {
+
     sequelize.define('Shipment', {
         id: {
+
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
