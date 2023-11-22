@@ -15,6 +15,7 @@ function App() {
         <Route path="/cotizacion" element={<QuoteForm />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/contact" element={FORMULARIO DE CONTACTO} /> */}
+        <Route path="/payment" element={<About />} />
       </Routes>
     </>
   );
